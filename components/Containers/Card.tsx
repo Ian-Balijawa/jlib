@@ -30,7 +30,7 @@ const notifications = [
 
 type CardProps = React.ComponentProps<typeof Card>
 
-export default ({ className, ...props }: CardProps) => {
+export const CardContainer = ({ className, ...props }: CardProps) => {
   return (
     <Card className={cn("min-w-min", className)} {...props}>
       <CardHeader>
@@ -77,3 +77,5 @@ export default ({ className, ...props }: CardProps) => {
     </Card>
   )
 }
+
+CardContainer.displayName = "CardContainer"

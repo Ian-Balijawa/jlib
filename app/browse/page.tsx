@@ -2,9 +2,8 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import Card from "@/components/Containers/Card"
-import DropDownMenu from "@/components/Containers/DropDownMenu"
+import { CardContainer } from "@/components/Containers/Card"
+import { DropdownMenuContainer } from "@/components/Containers/DropDownMenu"
 
 export default function BrowsePage() {
   return (
@@ -19,8 +18,8 @@ export default function BrowsePage() {
           Tuesday, 25 Apr 2023
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="flex col-span-2 justify-between">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="col-span-2 flex justify-between">
           <Link
             href={siteConfig.links.docs}
             target="_blank"
@@ -33,9 +32,9 @@ export default function BrowsePage() {
           >
             Latest Jobs
           </Link>
-          <DropDownMenu />
+          <DropdownMenuContainer />
         </div>
-        <div className="hidden lg:flex flex-wrap justify-between col-span-1">
+        <div className="col-span-1 hidden flex-wrap justify-between lg:flex">
           <Link
             href={siteConfig.links.docs}
             target="_blank"
@@ -44,19 +43,19 @@ export default function BrowsePage() {
           >
             Recommended for You
           </Link>
-          <DropDownMenu />
+          <DropdownMenuContainer />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 col-span-2">
+        <div className="col-span-2 grid grid-cols-1 gap-2 md:grid-cols-2">
           {Array.from({ length: 5 }).map((tag) => (
             <>
-              <Card />
+              <CardContainer />
             </>
           ))}
         </div>
 
         <div className="col-span-1 sm:col-span-3 md:col-span-2 lg:col-span-1">
-          <div className="flex flex justify-between items-center col-span-2 lg:hidden">
+          <div className="col-span-2 flex items-center justify-between lg:hidden">
             <Link
               href={siteConfig.links.docs}
               target="_blank"
@@ -65,9 +64,9 @@ export default function BrowsePage() {
             >
               Recommended for You
             </Link>
-            <DropDownMenu />
+            <DropdownMenuContainer />
           </div>
-          <Card />
+          <CardContainer />
         </div>
       </div>
     </section>
