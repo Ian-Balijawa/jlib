@@ -31,7 +31,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export const DropdownMenuContainer = () => {
+export const Container = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -121,4 +121,4 @@ export const DropdownMenuContainer = () => {
   )
 }
 
-DropdownMenuContainer.displayName = "DropdownMenuContainer"
+Container.displayName = "DropdownMenu"

@@ -2,8 +2,9 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
-import { CardContainer } from "@/components/Containers/Card"
-import { DropdownMenuContainer } from "@/components/Containers/DropDownMenu"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Container as Card } from "@/components/containers/card"
+import { Container as DropdownMenu } from "@/components/containers/dropdown-menu"
 
 export default function BrowsePage() {
   return (
@@ -32,7 +33,7 @@ export default function BrowsePage() {
           >
             Latest Jobs
           </Link>
-          <DropdownMenuContainer />
+          <DropdownMenu />
         </div>
         <div className="col-span-1 hidden flex-wrap justify-between lg:flex">
           <Link
@@ -43,17 +44,17 @@ export default function BrowsePage() {
           >
             Recommended for You
           </Link>
-          <DropdownMenuContainer />
+          <DropdownMenu />
         </div>
 
         <div className="col-span-2 grid grid-cols-1 gap-2 md:grid-cols-2">
           {Array.from({ length: 5 }).map((_, idx) => (
-            <CardContainer key={idx} />
+            <Card />
           ))}
         </div>
 
         <div className="col-span-1 sm:col-span-3 md:col-span-2 lg:col-span-1">
-          <div className="col-span-2 flex items-center justify-between lg:hidden">
+          <div className="col-span-2 mb-2 flex items-center justify-between lg:hidden">
             <Link
               href={siteConfig.links.docs}
               target="_blank"
@@ -62,9 +63,9 @@ export default function BrowsePage() {
             >
               Recommended for You
             </Link>
-            <DropdownMenuContainer />
+            <DropdownMenu />
           </div>
-          <CardContainer />
+          <Card />
         </div>
       </div>
     </section>

@@ -1,6 +1,8 @@
-import { BellRing, Check } from "lucide-react"
+import Image from "next/image"
+import { BellRing, MoreHorizontal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -10,72 +12,67 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { Switch } from "@/components/ui/switch"
-
-const notifications = [
-  {
-    title: "Your call has been confirmed.",
-    description: "1 hour ago",
-  },
-  {
-    title: "You have a new message!",
-    description: "1 hour ago",
-  },
-  {
-    title: "Your subscription is expiring soon!",
-    description: "2 hours ago",
-  },
-]
 
 type CardProps = React.ComponentProps<typeof Card>
 
-export const CardContainer = ({ className, ...props }: CardProps) => {
+export const Container = ({ className, ...props }: CardProps) => {
   return (
-    <Card className={cn("min-w-min", className)} {...props}>
+    <Card
+      className={cn("min-w-min cursor-pointer hover:shadow-lg", className)}
+      {...props}
+    >
       <CardHeader>
-        <CardTitle>Notifications</CardTitle>
-        <CardDescription>You have 3 unread messages.</CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-4">
-        <div className=" flex items-center space-x-4 rounded-md border p-4">
-          <BellRing />
+        <div className="flex items-start space-x-4 rounded-md p-4">
+          <Image
+            src="/logo.png"
+            alt="company-logo"
+            width={90}
+            height={90}
+            className="rounded"
+          />
           <div className="flex-1 space-y-1">
-            <p className="text-sm font-medium leading-none">
-              Push Notifications
-            </p>
+            <CardTitle>Notifications</CardTitle>
+
             <p className="text-sm text-muted-foreground">
               Send notifications to device.
             </p>
+            {Array.from({ length: 5 }).map((_, idx) => (
+              <Badge key={idx.toString()} variant="secondary">
+                Sql
+              </Badge>
+            ))}
           </div>
-          <Switch />
+          <MoreHorizontal />
         </div>
-        <div>
-          {notifications.map((notification, index) => (
-            <div
-              key={index}
-              className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+      </CardHeader>
+      <CardContent>
+        <CardDescription>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni
+          delectus nobis explicabo illum odio est earum blanditiis excepturi
+          incidunt, molestias eum iste repellat nisi veniam sunt tenetur iure
+          tempora, nostrum asperiores aspernatur? Officiis, iste quasi, fugiat
+          iure dolorem eos vitae, iusto deleniti amet consectetur fugit! veniam
+          totam deleniti!
+        </CardDescription>
+        <div className="flex gap-2">
+          {Array.from({ length: 3 }).map((_, idx) => (
+            <Badge
+              key={idx.toString()}
+              variant="secondary"
+              className="mt-2 gap-2 py-1 pl-2"
             >
-              <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
-              <div className="space-y-1">
-                <p className="text-sm font-medium leading-none">
-                  {notification.title}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {notification.description}
-                </p>
-              </div>
-            </div>
+              <BellRing />
+              Full-Time
+            </Badge>
           ))}
         </div>
       </CardContent>
-      <CardFooter>
-        <Button className="w-full">
-          <Check className="mr-2 h-4 w-4" /> Mark all as read
-        </Button>
+      <CardFooter className="flex items-center justify-between">
+        <CardTitle>TBD</CardTitle>
+        <Button variant="default">View Details</Button>
       </CardFooter>
     </Card>
   )
 }
 
-CardContainer.displayName = "CardContainer"
+Container.displayName = "CardContainer"
