@@ -47,10 +47,8 @@ export default function BrowsePage() {
         </div>
 
         <div className="col-span-2 grid grid-cols-1 gap-2 md:grid-cols-2">
-          {Array.from({ length: 5 }).map((tag) => (
-            <>
-              <CardContainer />
-            </>
+          {Array.from({ length: 5 }).map((_, idx) => (
+            <CardContainer key={idx} />
           ))}
         </div>
 
