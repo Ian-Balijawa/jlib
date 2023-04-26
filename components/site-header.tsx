@@ -2,11 +2,11 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
+import { Modal } from "@/components/containers/modal"
+import { Signin } from "@/components/containers/signin"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
-
-import { Modal, Signin } from "./containers"
 
 export function SiteHeader() {
   return (
