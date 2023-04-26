@@ -18,8 +18,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    twitter: "https://twitter.com/ianbalijawa",
+    github: "https://github.com/Ian-Balijawa/",
+    docs: "https://iyn.vercel.app",
   },
 }

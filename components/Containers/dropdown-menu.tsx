@@ -14,8 +14,6 @@ import {
   UserPlus,
   Users,
 } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -30,6 +28,8 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+
+import { Button } from "@/components/ui/button"
 
 export const Container = () => {
   return (

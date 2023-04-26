@@ -1,4 +1,9 @@
+import Image from "next/image"
 import { BellRing, MoreHorizontal } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -8,21 +13,19 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { cn } from "@/lib/utils"
-
 type CardProps = React.ComponentProps<typeof Card>
 
-export const Container = ( { className, ...props }: CardProps ) => {
+export const Container = ({ className, ...props }: CardProps) => {
   return (
     <Card
-      className={cn( "min-w-min cursor-pointer hover:shadow-lg", className )}
+      className={cn(
+        "min-w-min min-height cursor-pointer hover:shadow-lg",
+        className
+      )}
       {...props}
     >
       <CardHeader>
-        <div className="flex items-start space-x-4 rounded-md py-2">
+        <div className="flex items-start space-x-4 rounded-md">
           <Image
             src="/logo.png"
             alt="company-logo"
@@ -30,13 +33,13 @@ export const Container = ( { className, ...props }: CardProps ) => {
             height={90}
             className="rounded"
           />
-          <div className="flex-1 space-y-1">
-            <CardTitle className="text-xl">FullStack Developer</CardTitle>
-            {Array.from( { length: 5 } ).map( ( _, idx ) => (
-              <Badge key={idx.toString()} variant="secondary">
+          <div className="flex-1">
+            <CardTitle className="text-2xl">FullStack Developer</CardTitle>
+            {Array.from({ length: 5 }).map((_, idx) => (
+              <Badge className="mr-1" key={idx.toString()} variant="secondary">
                 Sql
               </Badge>
-            ) )}
+            ))}
           </div>
           <MoreHorizontal />
         </div>
@@ -51,7 +54,7 @@ export const Container = ( { className, ...props }: CardProps ) => {
           totam deleniti!
         </CardDescription>
         <div className="flex gap-2">
-          {Array.from( { length: 3 } ).map( ( _, idx ) => (
+          {Array.from({ length: 3 }).map((_, idx) => (
             <Badge
               key={idx.toString()}
               variant="secondary"
@@ -60,12 +63,18 @@ export const Container = ( { className, ...props }: CardProps ) => {
               <BellRing />
               Full-Time
             </Badge>
-          ) )}
+          ))}
         </div>
       </CardContent>
-      <CardFooter className="flex items-center justify-between">
+      <CardFooter
+        className="flex items-center justify-between"
+        style={{ marginBottom: "-10px" }}
+      >
         <CardTitle>TBD</CardTitle>
-        <Button variant="default">View Details</Button>
+        <div className="flex items-center gap-4">
+          <Button variant="secondary">View Details</Button>
+          <Button variant="default">Apply</Button>
+        </div>
       </CardFooter>
     </Card>
   )

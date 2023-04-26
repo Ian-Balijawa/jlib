@@ -2,6 +2,8 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Card, DropdownMenu, RecommendationCard } from "@/components/containers"
 
 export default function IndexPage() {
   return (
@@ -12,28 +14,59 @@ export default function IndexPage() {
           <br className="hidden sm:inline" />
           Platform For Experts
         </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
       </div>
-      <div className="flex gap-4">
-        <Link
-          href={siteConfig.links.docs}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants({ size: "lg" })}
-        >
-          Documentation
-        </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline", size: "lg" })}
-        >
-          GitHub
-        </Link>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="col-span-2 flex justify-between">
+          <Link
+            href={siteConfig.links.docs}
+            target="_blank"
+            rel="noreferrer"
+            className={buttonVariants({
+              variant: "ghost",
+              size: "lg",
+              className: "font-bold",
+            })}
+          >
+            Latest Jobs
+          </Link>
+          <DropdownMenu />
+        </div>
+        <div className="col-span-1 hidden flex-wrap justify-between lg:flex">
+          <Link
+            href={siteConfig.links.docs}
+            target="_blank"
+            rel="noreferrer"
+            className={buttonVariants({ variant: "ghost", size: "lg" })}
+          >
+            Recommended for You
+          </Link>
+          <DropdownMenu />
+        </div>
+
+        <div className="col-span-2 min-height grid grid-cols-1 gap-2 md:grid-cols-2">
+          {Array.from({ length: 5 }).map((_, idx) => (
+            <Card key={idx.toString()} />
+          ))}
+        </div>
+
+        <div className="col-span-1 sm:col-span-3 md:col-span-2 lg:col-span-1">
+          <div className="col-span-2 mb-2 flex items-center justify-between lg:hidden">
+            <Link
+              href={siteConfig.links.docs}
+              target="_blank"
+              rel="noreferrer"
+              className={buttonVariants({ variant: "ghost", size: "lg" })}
+            >
+              Recommended for You
+            </Link>
+            <DropdownMenu />
+          </div>
+          <ScrollArea className="border pt-1 pb-1 pr-4 pl-4 rounded-md h-[30%]">
+            {Array.from({ length: 20 }).map((_, idx) => (
+              <RecommendationCard key={idx.toString()} />
+            ))}
+          </ScrollArea>
+        </div>
       </div>
     </section>
   )

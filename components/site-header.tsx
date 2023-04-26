@@ -6,6 +6,8 @@ import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+import { Modal, Signin } from "./containers"
+
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
@@ -43,6 +45,10 @@ export function SiteHeader() {
                 <span className="sr-only">Twitter</span>
               </div>
             </Link>
+
+            <Modal>
+              <Signin />
+            </Modal>
             <ThemeToggle />
           </nav>
         </div>
