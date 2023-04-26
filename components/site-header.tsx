@@ -1,10 +1,10 @@
 import Link from "next/link"
+import { Modal } from "@/containers/modal"
+import { NavMenu } from "@/containers/nav-menu"
+import { Signin } from "@/containers/signin"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
-import { Modal } from "@/components/containers/modal"
-import { NavMenu } from "@/components/containers/nav-menu"
-import { Signin } from "@/components/containers/signin"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"

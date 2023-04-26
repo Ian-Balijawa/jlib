@@ -4,7 +4,7 @@ import { BellRing, MoreHorizontal } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 
-import { Icons } from "../icons"
+import { Icons } from "../components/icons"
 
 type CardProps = React.ComponentProps<typeof Card>
 

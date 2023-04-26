@@ -1,11 +1,11 @@
 import Link from "next/link"
+import { Container as CardDetails } from "@/containers/card-details"
+import { Container as DropdownMenu } from "@/containers/dropdown-menu"
+import { Container as RecommendationCard } from "@/containers/recommendations-card"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Container as CardDetails } from "@/components/containers/card-details"
-import { Container as DropdownMenu } from "@/components/containers/dropdown-menu"
-import { Container as RecommendationCard } from "@/components/containers/recommendations-card"
 
 export default function BrowsePage() {
   return (
