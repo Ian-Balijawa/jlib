@@ -63,7 +63,7 @@ export default function IndexPage() {
             </Link>
             <DropdownMenu />
           </div>
-          <ScrollArea className="h-[30%] rounded-md border px-4 py-1">
+          <ScrollArea className="h-[30%] px-4">
             {Array.from({ length: 20 }).map((_, idx) => (
               <RecommendationCard key={idx.toString()} />
             ))}
