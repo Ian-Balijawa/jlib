@@ -3,12 +3,9 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import {
-  Card,
-  CardDetails,
-  DropdownMenu,
-  RecommendationCard,
-} from "@/components/containers"
+import { Container as CardDetails } from "@/components/containers/card-details"
+import { Container as DropdownMenu } from "@/components/containers/dropdown-menu"
+import { Container as RecommendationCard } from "@/components/containers/recommendations-card"
 
 export default function BrowsePage() {
   return (
