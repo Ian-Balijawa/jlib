@@ -19,7 +19,7 @@ export const Container = ({ className, ...props }: CardProps) => {
   return (
     <Card
       className={cn(
-        "min-w-min min-height cursor-pointer hover:shadow-lg",
+        "min-height min-w-min cursor-pointer hover:shadow-lg",
         className
       )}
       {...props}

@@ -20,7 +20,7 @@ type CardProps = React.ComponentProps<typeof Card>
 export const Container = ({ className, ...props }: CardProps) => {
   return (
     <Card
-      className={cn("min-w-min cursor-pointer hover:shadow-lg mt-2", className)}
+      className={cn("mt-2 min-w-min cursor-pointer hover:shadow-lg", className)}
       {...props}
     >
       <CardHeader>
@@ -35,11 +35,11 @@ export const Container = ({ className, ...props }: CardProps) => {
           <div className="flex w-full flex-col items-start justify-between">
             <div className="flex w-full items-center justify-between">
               <CardTitle className="text-sm">FullStack Developer</CardTitle>
-              <Icons.gitHub className="w-4 h-4" />
+              <Icons.gitHub className="h-4 w-4" />
             </div>
             <div className="flex w-full items-center justify-between">
               <CardTitle className="text-sm">UG</CardTitle>
-              <Icons.logo className="w-4 h-4" />
+              <Icons.logo className="h-4 w-4" />
             </div>
           </div>
         </div>

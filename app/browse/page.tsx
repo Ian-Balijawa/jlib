@@ -37,7 +37,7 @@ export default function BrowsePage() {
               </Link>
               <DropdownMenu />
             </div>
-            <ScrollArea className="border pt-1 pb-1 pr-4 pl-4 rounded-md h-[30%]">
+            <ScrollArea className="h-[30%] rounded-md border px-4 py-1">
               {Array.from({ length: 20 }).map((_, idx) => (
                 <RecommendationCard key={idx.toString()} />
               ))}
@@ -45,7 +45,7 @@ export default function BrowsePage() {
           </div>
         </div>
 
-        <div className="col-span-2 min-height">
+        <div className="min-height col-span-2">
           {Array.from({ length: 5 }).map((_, idx) => (
             <CardDetails className="mb-4" key={idx.toString()} />
           ))}

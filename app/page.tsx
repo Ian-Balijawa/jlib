@@ -43,7 +43,7 @@ export default function IndexPage() {
           <DropdownMenu />
         </div>
 
-        <div className="col-span-2 min-height grid grid-cols-1 gap-2 md:grid-cols-2">
+        <div className="min-height col-span-2 grid grid-cols-1 gap-2 md:grid-cols-2">
           {Array.from({ length: 5 }).map((_, idx) => (
             <Card key={idx.toString()} />
           ))}
@@ -61,7 +61,7 @@ export default function IndexPage() {
             </Link>
             <DropdownMenu />
           </div>
-          <ScrollArea className="border pt-1 pb-1 pr-4 pl-4 rounded-md h-[30%]">
+          <ScrollArea className="h-[30%] rounded-md border px-4 py-1">
             {Array.from({ length: 20 }).map((_, idx) => (
               <RecommendationCard key={idx.toString()} />
             ))}

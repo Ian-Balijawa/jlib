@@ -25,7 +25,7 @@ export const Signin = () => {
       </TabsList>
       <TabsContent value="signin">
         <Card>
-          <CardHeader className="text-3xl w-full text-center">
+          <CardHeader className="w-full text-center text-3xl">
             Signin
           </CardHeader>
           <CardContent className="space-y-2">
@@ -52,7 +52,7 @@ export const Signin = () => {
       </TabsContent>
       <TabsContent value="signup">
         <Card>
-          <CardHeader className="text-3xl w-full text-center">
+          <CardHeader className="w-full text-center text-3xl">
             Signup
           </CardHeader>
           <CardContent className="space-y-2">
